@@ -56,6 +56,7 @@ export const AuthProvider = ({children}) => {
 
          const checkUserStatus = async () => {
             try{
+                console.log(account);
                 let accountDetails = await account.get();
                 setUser(accountDetails)
             }catch(error){
