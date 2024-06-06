@@ -23,12 +23,10 @@ function LoginPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(loginForm);
         const email = loginForm.current.email.value
         const password = loginForm.current.password.value
         
         const userInfo = {email, password}
-        console.log(userInfo);
         loginUser(userInfo)
     }
 

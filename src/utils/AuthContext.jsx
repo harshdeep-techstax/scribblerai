@@ -19,9 +19,9 @@ export const AuthProvider = ({children}) => {
          const loginUser = async (userInfo) => {
             setLoading(true)
 
-            console.log('userInfo',userInfo)
+            // console.log('userInfo',userInfo)
             try{
-                let response = await account.createEmailSession(userInfo.email, userInfo.password)
+                let response = await account.createEmailPasswordSession(userInfo.email, userInfo.password)
                 let accountDetails = await account.get();
                 setUser(accountDetails)
             }catch(error){
@@ -43,7 +43,7 @@ export const AuthProvider = ({children}) => {
                 
                 let response = await account.create(ID.unique(), userInfo.email, userInfo.password1, userInfo.name);
         
-                await account.createEmailSession(userInfo.email, userInfo.password1)
+                await account.createEmailPasswordSession(userInfo.email, userInfo.password1)
                 let accountDetails = await account.get();
                 setUser(accountDetails)
                 navigate('/')

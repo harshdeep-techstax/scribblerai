@@ -62,11 +62,11 @@ function Header({mobile, visibility, setVisibility, className}) {
                         </li>
                         <li>
                             <a
-                                href="https://themeforest.net/item/scribblerai-ai-content-generator-dashboard-and-user-app-react-template/50114420"
+                                href="/login"
                                 className="inline-flex font-medium text-sm bg-blue-600 text-white hover:bg-blue-800 transition-all px-5 py-2 rounded-full"
                             >
-                                <span className="xs:hidden">Purchase</span>
-                                <span className="hidden xs:inline">Purchase Now</span>
+                                <span className="xs:hidden">Login</span>
+                                <span className="hidden xs:inline">Login</span>
                             </a>
                         </li>
                     </ul>

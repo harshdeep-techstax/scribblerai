@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import Container from "../../global/Container";
 import { NavLink } from "react-router-dom";
 import {MoonIcon, SunIcon} from "@heroicons/react/24/solid";
+import { useAuth } from "../../../utils/AuthContext";
 import { Menu as Dropdown, Transition } from "@headlessui/react";
 import {
     Bars3Icon,
@@ -20,6 +21,7 @@ import { useTheme, useThemeUpdate } from "../../provider";
 function Header({mobile, visibility, setVisibility, className}) {
     const theme = useTheme();
     const themeUpdate = useThemeUpdate();
+    const {user, logoutUser} = useAuth()
 
     const menuClass = classNames({
         "flex flex-col py-4 xl:py-0 w-64 xl:w-auto fixed xl:transition-none xl:static start-0 top-0 border-e border-slate-200 dark:border-slate-800 xl:border-e-0 bg-white dark:bg-slate-950 z-[1020] h-screen xl:h-auto flex-shrink-0 xl:translate-x-0": true,
@@ -120,22 +122,11 @@ function Header({mobile, visibility, setVisibility, className}) {
                                                 </NavLink>
                                             </li>
                                             <li>
-                                                <NavLink
-                                                    to="/app/packages"
-                                                    className="flex text-xs px-4 py-2 font-bold text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:dark:text-blue-600 transition-all"
-                                                >
-                                                    <RocketLaunchIcon className="w-4 me-2" />
-                                                    <span>Upgrade</span>
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/login"
-                                                    className="flex text-xs px-4 py-2 font-bold text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:dark:text-blue-600 transition-all"
-                                                >
+                                                <div  className="flex text-xs px-4 py-2 font-bold text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:dark:text-blue-600 transition-all">
                                                     <PowerIcon className="w-4 me-2" />
-                                                    <span>Logout</span>
-                                                </NavLink>
+                                                    <button onClick={logoutUser} className="btn"><span>Logout</span></button>
+                                                </div>
+                                                
                                             </li>
                                         </ul>
                                     </Dropdown.Items>

@@ -521,7 +521,7 @@ function IntroPage() {
                                         href="https://themeforest.net/item/scribblerai-ai-content-generator-dashboard-and-user-app-react-template/50114420" target="_blank"
                                         className="peer inline-flex font-medium text-sm bg-blue-600 text-white hover:bg-blue-800 transition-all px-5 py-2 rounded-full"
                                     >
-                                        Purchase Now
+                                        Login
                                     </a>
                                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-3 w-52 p-4 mb-2 bg-white dark:bg-slate-950 rounded-md shadow-md shadow-blue-100 dark:shadow-blue-950 opacity-0 peer-hover:opacity-100 peer-hover:translate-y-0 transition-all duration-300 invisible peer-hover:visible">
                                         <h6 className="text-base text-slate-600 dark:text-slate-200 font-bold z-10 relative">Buy This Awesome Template for <span className="text-emerald-500">Only $20</span></h6>
