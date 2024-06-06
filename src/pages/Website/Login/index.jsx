@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../utils/AuthContext';
 import Layout from "../../../layout/website";
 import Section from "../../../layout/global/Section";
 import Container from "../../../layout/global/Container";
@@ -8,6 +10,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 function LoginPage() {
+    const {user, loginUser} = useAuth();
+    const navigate = useNavigate()
+
+    const loginForm = useRef(null)
+
+    useEffect(() => {
+        if (user){
+        navigate('/')
+        }
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(loginForm);
+        const email = loginForm.current.email.value
+        const password = loginForm.current.password.value
+        
+        const userInfo = {email, password}
+        console.log(userInfo);
+        loginUser(userInfo)
+    }
+
     return (
         <Layout title="Login">
             <Section className="py-10 my-auto">
@@ -23,6 +47,7 @@ function LoginPage() {
                                         With valid credentials
                                     </p>
                                 </div>
+                                <form onSubmit={handleSubmit} ref={loginForm}> 
                                 <div className="py-2">
                                     <Label
                                         htmlFor="emial-address"
@@ -32,7 +57,9 @@ function LoginPage() {
                                     </Label>
                                     <Input
                                         placeholder="example@email.com"
-                                        id="emial-address"
+                                        id="email"
+                                        type="email"
+                                        name="email"
                                     />
                                 </div>
                                 <div className="py-2">
@@ -52,16 +79,19 @@ function LoginPage() {
                                         defaultValue="123456"
                                         id="password"
                                         type="password"
+                                        name="email"
                                     />
                                 </div>
                                 <div className="pt-3">
                                     <Button
+                                        
                                         block
                                         className="bg-blue-600 text-white hover:bg-blue-800"
                                     >
                                         Account Login
                                     </Button>
                                 </div>
+                                </form>
                                 <div className="mt-5 mb-4">
                                     <h6 className="text-slate-400 text-[11px] uppercase text-center font-bold tracking-wider">
                                         Login With

@@ -6,14 +6,14 @@ import NotFoundPage from "../pages/Website/NotFound";
 import LoginPage from "../pages/Website/Login";
 import CreateAccountPage from "../pages/Website/CreateAccount";
 import TwoStepPage from "../pages/Website/TwoStep";
-
+import ProtectedRoutes from "./ProtectedRoutes";
 import ImageGenLandingPage from "../pages/Website/Landing/ImageGenerator";
 import CodeGenPage from "../pages/Website/Landing/CodeGenerator";
 import TextGenPage from "../pages/Website/Landing/TextGenerator";
 import PricingPage from "../pages/Website/Pricing";
 import AboutPage from "../pages/Website/About";
+import { AuthProvider } from '../utils/AuthContext'
 
-//app
 import AppDashboard from "../pages/App/Dashboard";
 import DocumentsPage from "../pages/App/Documents";
 import DocumentsEdit from "../pages/App/Documents/Edit";
@@ -65,9 +65,10 @@ function Router() {
     return (
         <BrowserRouter>
             <ScrollToTop>
+                <AuthProvider>
                 <Routes>
                     <Route element={<ThemeProvider />}>
-                            <Route index element={<WebsiteIntro />} />
+                            <Route index element={<TextGenPage />} />
                             <Route path="landing-text-image" element={<ImageGenLandingPage />} />
                             <Route path="landing-text-code" element={<CodeGenPage />} />
                             <Route path="landing-prompt-text" element={<TextGenPage />} />
@@ -77,9 +78,9 @@ function Router() {
                             <Route path="two-step" element={<TwoStepPage />} />
                             <Route path="create-account" element={<CreateAccountPage />} />
                             <Route path="*" element={<NotFoundPage />} />
-                        
+                            <Route path="landing-text-image" element={<ImageGenLandingPage />} />
                         <Route path="app">
-                            <Route index element={<AppDashboard />} />
+                            {/* <Route index element={<AppDashboard />} />
                             <Route path="documents">
                                 <Route index element={<DocumentsPage />} />
                                 <Route
@@ -89,19 +90,21 @@ function Router() {
                             </Route>
                             <Route path="profile" element={<ProfilePage />} />
                             <Route path="packages" element={<PackagesPage />} />
-                            <Route path="faq" element={<FaqPage />} />
-                            <Route path="templates">
-                                <Route index element={<TemplatesPage />} />
-                                <Route path="writer/:writerslug" element={<TemplatesWriterPage />} ></Route>
-                                <Route path="image" element={<ImageGenerator />} ></Route>
-                                <Route path="image-s2" element={<ImageGeneratorS2 />} ></Route>
-                                <Route path="code" element={<CodeGenerator />} ></Route>
-                                <Route path="speech-to-text" element={<SpeechText />} ></Route>
-                                <Route path="chatbot" element={<ChatBot />} ></Route>
-                                <Route path="chatbot-s2" element={<ChatBotS2 />} ></Route>
+                            <Route path="faq" element={<FaqPage />} /> */}
+                            <Route element={<ProtectedRoutes/>}>
+                                <Route path="templates">
+                                    {/* <Route index element={<TemplatesPage />} /> */}
+                                    <Route path="writer/:writerslug" element={<TemplatesWriterPage />} ></Route>
+                                    {/* <Route path="image" element={<ImageGenerator />} ></Route>
+                                    <Route path="image-s2" element={<ImageGeneratorS2 />} ></Route>
+                                    <Route path="code" element={<CodeGenerator />} ></Route>
+                                    <Route path="speech-to-text" element={<SpeechText />} ></Route>
+                                    <Route path="chatbot" element={<ChatBot />} ></Route>
+                                    <Route path="chatbot-s2" element={<ChatBotS2 />} ></Route> */}
+                                </Route>
                             </Route>
                         </Route>
-                        <Route path="admin">
+                        {/* <Route path="admin">
                             <Route index element={<AdminDashboard />} />
                             <Route path="dashboard" element={<AdminDashboard />} />
                             <Route path="users">
@@ -155,9 +158,10 @@ function Router() {
                                     element={<SocialNetworksSettings />}
                                 />
                             </Route>
-                        </Route>
+                        </Route> */}
                     </Route>
                 </Routes>
+                </AuthProvider>
             </ScrollToTop>
         </BrowserRouter>
     );

@@ -14,7 +14,7 @@ const templatesNav = textTemplates
 const templatesExcerpt = JSON.parse(`{"sub":[${templatesNav}]}`);
 
 const menuData = [
-    { text: "Home", link: "/app" },
+    { text: "Home", link: "/" },
     {
         text: "Templates",
         link: "#",
@@ -25,53 +25,7 @@ const menuData = [
                 link: "#",
                 label: "3",
                 ...templatesExcerpt
-            },
-            { 
-                text: "Ai Image", 
-                link: "#",
-                label: "3",
-                sub: [
-                    {text: "Image Generator", link: "/app/templates/image"},
-                    {text: "Image Generator S2", link: "/app/templates/image-s2"}
-                ]
-            },
-            { 
-                text: "Ai Chatbot", 
-                link: "#",
-                label: "3",
-                sub: [
-                    {text: "Chatbot s1", link: "/app/templates/chatbot"},
-                    {text: "Chatbot S2", link: "/app/templates/chatbot-s2", tag:"New"}
-                ]
-            },
-            { text: "Ai Code", link: "/app/templates/code" },
-            {
-                text: "Ai Speech Text",
-                link: "/app/templates/speech-to-text",
-            },
-            { divider: true },
-            {
-                text: `All ${templates.length} Templates`,
-                link: "/app/templates",
-            },
-        ],
-    },
-    { text: "Documents", link: "/app/documents" },
-    {
-        text: "Pages",
-        link: "#",
-        label: "2",
-        sub: [
-            { text: "Profile", link: "/app/profile" },
-            { text: "Packages", link: "/app/packages" },
-            { text: "Faq", link: "/app/faq" },
-            { text: "Login", link: "/login" },
-            { text: "Create Account", link: "/create-account" },
-            { text: "Two Step Verify", link: "/two-step" },
-            { text: "404 Error", link: "/404" },
-            { divider: true },
-            { text: "Website", link: "/" },
-            { text: "Dashboard", link: "/admin" },
+            }
         ],
     },
 ];
