@@ -27,6 +27,8 @@ const menuData = [
         sub: [
             { heading: "Apps"},
             { text: "Copy Writer", link: "/app/templates/writer/article-generator" },
+            { text: "Chat Bot", link: "/app/templates/chatbot" },
+            { text: "Chat Bot S2", link: "/app/templates/chatbot-s2", tag:"New" },
         ],
     },
 ];

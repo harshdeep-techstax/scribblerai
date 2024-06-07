@@ -98,9 +98,9 @@ function Router() {
                                     {/* <Route path="image" element={<ImageGenerator />} ></Route>
                                     <Route path="image-s2" element={<ImageGeneratorS2 />} ></Route>
                                     <Route path="code" element={<CodeGenerator />} ></Route>
-                                    <Route path="speech-to-text" element={<SpeechText />} ></Route>
+                                    <Route path="speech-to-text" element={<SpeechText />} ></Route> */}
                                     <Route path="chatbot" element={<ChatBot />} ></Route>
-                                    <Route path="chatbot-s2" element={<ChatBotS2 />} ></Route> */}
+                                    <Route path="chatbot-s2" element={<ChatBotS2 />} ></Route>
                                 </Route>
                             </Route>
                         </Route>

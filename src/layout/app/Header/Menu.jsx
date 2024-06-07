@@ -28,6 +28,15 @@ const menuData = [
             }
         ],
     },
+    { 
+        text: "Ai Chatbot", 
+        link: "#",
+        label: "3",
+        sub: [
+            {text: "Chatbot s1", link: "/app/templates/chatbot"},
+            {text: "Chatbot S2", link: "/app/templates/chatbot-s2", tag:"New"}
+        ]
+    },
 ];
 
 function Menu({ mobile, className }) {
