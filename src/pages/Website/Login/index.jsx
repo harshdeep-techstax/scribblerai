@@ -17,7 +17,7 @@ function LoginPage() {
 
     useEffect(() => {
         if (user){
-        navigate('/')
+        navigate('/app/templates/writer/article-generator')
         }
     })
 
