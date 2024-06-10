@@ -7,30 +7,30 @@ import getParents from "../../../utilities/getParents";
 import { useTheme } from "../../provider";
 
 const menuData = [
-    { 
-        text: "Landing", 
-        link: "#",
-        label: "2",
-        sub: [
-            { text: "Image Generator", link: "/landing-text-image" },
-            { text: "Code Generator", link: "/landing-text-code" },
-            { text: "Text Generator", link: "/landing-prompt-text" },
-            {divider: true},
-            { text: "Back to Intro", link: "/" },
-        ],
-    },
-    {
-        text: "User App",
-        link: "#",
-        label: "2",
-        column: "2",
-        sub: [
-            { heading: "Apps"},
-            { text: "Copy Writer", link: "/app/templates/writer/article-generator" },
-            { text: "Chat Bot", link: "/app/templates/chatbot" },
-            { text: "Chat Bot S2", link: "/app/templates/chatbot-s2", tag:"New" },
-        ],
-    },
+    // { 
+    //     text: "Landing", 
+    //     link: "#",
+    //     label: "2",
+    //     sub: [
+    //         { text: "Image Generator", link: "/landing-text-image" },
+    //         { text: "Code Generator", link: "/landing-text-code" },
+    //         { text: "Text Generator", link: "/landing-prompt-text" },
+    //         {divider: true},
+    //         { text: "Back to Intro", link: "/" },
+    //     ],
+    // },
+    // {
+    //     text: "User App",
+    //     link: "#",
+    //     label: "2",
+    //     column: "2",
+    //     sub: [
+    //         { heading: "Apps"},
+    //         { text: "Copy Writer", link: "/app/templates/writer/article-generator" },
+    //         { text: "Chat Bot", link: "/app/templates/chatbot" },
+    //         { text: "Chat Bot S2", link: "/app/templates/chatbot-s2", tag:"New" },
+    //     ],
+    // },
 ];
 
 function Menu({ mobile, className }) {

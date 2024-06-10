@@ -16,26 +16,19 @@ const templatesExcerpt = JSON.parse(`{"sub":[${templatesNav}]}`);
 const menuData = [
     { text: "Home", link: "/" },
     {
-        text: "Templates",
-        link: "#",
+        text: "AI Writer",
+        link: "/app/templates/writer/article-generator",
         label: "2",
-        sub: [
-            {
-                text: "Ai Writer",
-                link: "#",
-                label: "3",
-                ...templatesExcerpt
-            }
-        ],
+        // ...templatesExcerpt,
     },
     { 
         text: "Ai Chatbot", 
-        link: "#",
+        link: "/app/templates/chatbot-s2",
         label: "3",
-        sub: [
-            {text: "Chatbot s1", link: "/app/templates/chatbot"},
-            {text: "Chatbot S2", link: "/app/templates/chatbot-s2", tag:"New"}
-        ]
+        // sub: [
+        //     {text: "Chatbot s1", link: "/app/templates/chatbot"},
+        //     {text: "Chatbot S2", link: "/app/templates/chatbot-s2", tag:"New"}
+        // ]
     },
 ];
 

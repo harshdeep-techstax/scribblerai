@@ -45,7 +45,7 @@ function Header({mobile, visibility, setVisibility, className}) {
                                 <Bars3Icon className="h-5" />
                             </button>
                         </div>
-                        <Link className="flex-shrink-0" to="/app">
+                        <Link className="flex-shrink-0" to="/app/templates/writer/article-generator">
                             <Logo />
                         </Link>
                     </div>
